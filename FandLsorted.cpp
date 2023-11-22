@@ -1,4 +1,4 @@
-nt binarySearchLeft ( vector<int>& nums, int l, int r, int target )
+int binarySearchLeft ( vector<int>& nums, int l, int r, int target )
         {
             int ans = 0;
             while ( l<=r ){

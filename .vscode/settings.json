@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "1793maximum score of a good subarray": "cpp"
     }
 }
