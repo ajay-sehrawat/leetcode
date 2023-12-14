@@ -1,11 +1,8 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-//Boredom
-int main()
-{
-    int nums[3] = {5, 1, 3};
-    int target = 5;
-    
-   
-    return 0;
+int main() {
+    std::vector<int> v{ 1, 2, 3, 4, 5 };
+    v.insert(v.begin(), 6);
+    for( int i=0; i<5; i++ )
+        cout<<v[i];
 }
