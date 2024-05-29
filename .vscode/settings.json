@@ -4,6 +4,7 @@
         "1793maximum score of a good subarray": "cpp",
         "cmath": "cpp",
         "complex": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "string": "cpp"
     }
 }
