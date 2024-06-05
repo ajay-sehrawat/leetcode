@@ -24,8 +24,6 @@ public:
                 mp2[i]++;
                 }
         }
-
-
         return {{ans1},{ans2}};
     }
 };
