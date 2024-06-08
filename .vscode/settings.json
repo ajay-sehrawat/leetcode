@@ -5,6 +5,15 @@
         "cmath": "cpp",
         "complex": "cpp",
         "cstdlib": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp"
     }
 }
