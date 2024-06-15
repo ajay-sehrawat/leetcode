@@ -40,7 +40,7 @@ only picks the maximum profit in the current batch of affordable projects.
 In the second implementation, sum is reset to 0 in each iteration, which means it only picks one project per iteration, 
 and this project is the one with the highest profit in the current batch of affordable projects.
 */
-//Sum Method
+//Sum Method, Doesn't work
 class Solution {
 public:
     int findMaximizedCapital(int k, int w, vector<int>& profits, vector<int>& capital) {
