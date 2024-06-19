@@ -14,3 +14,13 @@ public:
     }
 };
 //Without loop Solution
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        
+        if ( n< 0 )
+            return fasle;
+        return ((n & (n-1)) == 0  );
+
+    }
+};
