@@ -1,33 +1,58 @@
+//My solution Fails some test cases;
 class Solution {
 public:
     int trap(vector<int>& height) {
-        int n = height.size();
-        int s=0, e = 1, area = 0, sum = 0;
-        int i,j;
-        while (s<n && e<n)
+        int n = height.size(), inSum = 0;
+
+        int i = 0, j=0, rainSum = 0;
+        while ( i<n )
         {
-            while ( height[s] > height[e] && e != n ){
-                e++;
+            i = j;
+            j = i+1;
+            inSum = 0;
+            while ( j<n && height[i] > height[j] ){
+                inSum += height[j];
+                j++;
             }
-            if ( e == n )
-                {
-                    s++;
-                    e = s+1;
-                }
-            else{
-                i = s+1;
-                j = e;
-                sum = 0;
-                while (i < j){
-                    sum += height[i];
+            cout<<"j = "<<j<<"i = "<<i<<endl;
+            if ( j == n )
+            {
+                if ( i<n ){
                     i++;
+                    j = i;
+                    continue;
                 }
-                area += (height[s]*(e-(s+1) )) - sum;
-                s = e;
-                e++;
-                cout<<area<<endl;
-            }   
+                else
+                    break;
+            }
+            rainSum += (min(height[i],height[j])*(j-i-1)) - inSum;
+            cout<<"rainSum = "<<rainSum<<"inSum = "<<inSum<<endl;
         }
-        return area;
+        return rainSum;
+    }
+};
+//NeetCode SOlution
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        if (height.empty()) {
+            return 0;
+        }
+
+        int l = 0, r = height.size() - 1;
+        int leftMax = height[l], rightMax = height[r];
+        int res = 0;
+        while (l < r) {
+            if (leftMax < rightMax) {
+                l++;
+                leftMax = max(leftMax, height[l]);
+                res += leftMax - height[l];
+            } else {
+                r--;
+                rightMax = max(rightMax, height[r]);
+                res += rightMax - height[r];
+            }
+        }
+        return res;
     }
 };
