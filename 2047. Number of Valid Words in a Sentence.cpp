@@ -11,33 +11,23 @@ public:
         {
             int n = word.size();
             bool pun = false, hyp = false, digi = false, check = true;
-
+            cout << word << endl;
             for (int i = 0; i < n; i++)
             {
                 if (word[i] > 47 && word[i] < 58)
                 {
                     check = false;
-                    continue;
+                    break;
                 }
-                else if (hyp)
+                else if (pun || ((word[i] == '.' || word[i] == '!' || word[i] == ',') && i != n - 1))
                 {
                     check = false;
-                    continue;
+                    break;
                 }
-                else if (pun)
+                else if (word[i] == '-' && (hyp || i == 0 || i == n - 1 || (i < n - 1 && (word[i + 1] < 'a' || word[i + 1] > 'z'))))
                 {
                     check = false;
-                    continue;
-                }
-                else if ((word[i] == '.' || word[i] == '!' || word[i] == ',') && i != n - 1)
-                {
-                    check = false;
-                    continue;
-                }
-                else if ((word[i] == '-') && (i == 0 || i == n - 1 || (i < n - 1 && (word[i + 1] < 'a' || word[i + 1] > 'z'))))
-                {
-                    check = false;
-                    continue;
+                    break;
                 }
                 else
                 {
@@ -49,7 +39,9 @@ public:
             }
 
             if (check)
+            {
                 count++;
+            }
         }
 
         return count;
